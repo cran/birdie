@@ -6,27 +6,32 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/CoryMcCartan/birdie/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CoryMcCartan/birdie/actions/workflows/R-CMD-check.yaml)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version-last-release/birdie)](https://cran.r-project.org/package=redist)
+![CRAN downloads](http://cranlogs.r-pkg.org/badges/grand-total/birdie)
 <!-- badges: end -->
+
+Bayesian Improved Surname Geocoding (BISG) is a simple model that
+predicts individual race based off last names and addresses. While
+predictive, it is not perfect, and measurement error in these
+predictions can cause problems in downstream analyses.
 
 Bayesian Instrumental Regression for Disparity Estimation (BIRDiE) is a
 class of Bayesian models for accurately estimating conditional
-distributions by race, using Bayesian Improved Surname Geocoding (BISG)
-probability estimates of individual race. This package implements BIRDiE
-as described in [McCartan, Fisher, Goldin, Ho, and Imai
-(2024)](https://www.nber.org/papers/w32373). It also implements standard
-BISG and an improved measurement-error BISG model as described in [Imai,
-Olivella, and Rosenman
+distributions by race, using BISG probabilities as inputs. This package
+implements BIRDiE as described in [McCartan, Fisher, Goldin, Ho, and
+Imai (2025)](https://doi.org/10.1080/01621459.2025.2526695). It also
+implements standard BISG and an improved measurement-error BISG model as
+described in [Imai, Olivella, and Rosenman
 (2022)](https://www.science.org/doi/full/10.1126/sciadv.adc9824).
 
 <img src="man/figures/poster.svg" style="width: 100%" alt="BIRDiE Overview Poster" />
 
 ## Installation
 
-BIRDiE is not yet available on CRAN. You can install the latest version
-of the package with:
+You can install the latest version of the package from CRAN with:
 
 ``` r
-install.packages("birdie", repos = "https://corymccartan.r-universe.dev")
+install.packages("birdie")
 ```
 
 You can also install the development version with:
@@ -146,7 +151,7 @@ tidy(fit)
 plot(fit)
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+![](man/figures/README-unnamed-chunk-5-1.png)<!-- -->
 
 A more detailed introduction to the method and software package can be
 found on the [Get

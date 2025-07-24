@@ -138,7 +138,7 @@ bisg_me <- function(formula, data=NULL, p_r=p_r_natl(), p_rgx=NULL, p_rs=NULL,
                       l_name$p_sr, l_gx$p_rgx,
                       alpha_gzr, beta_sr, cores=cores, verbosity=3L)
     cli::cli_process_done()
-    colnames(m_bisg) = paste0("pr_", names(p_r))
+    colnames(m_bisg) = paste0("pr_", names(l_gx$p_r))
 
     out = as_tibble(m_bisg)
     class(out) = c("bisg_me", "bisg", class(out))
@@ -359,8 +359,8 @@ make_gx_tbl_vec <- function(vars, p_r, p_rgx) {
             if (nrow(d_miss) > 0) {
                 str_miss = capture.output(head(d_miss, 10))
                 if (nrow(d_miss) > 10) str_miss = c(str_miss, "  ...")
-                msg = c("Some predictor combinations are missing from {.arg p_rgx}:", str_miss) |>
-                    str_replace_all(" ", "\ua0")
+                msg = c("Some predictor combinations are missing from {.arg p_rgx}:", str_miss)
+                mgs = str_replace_all(msg, " ", "\ua0")
                 rlang::abort(msg, use_cli_format=TRUE, call=parent.frame())
             }
         }
